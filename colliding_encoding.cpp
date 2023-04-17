@@ -6,14 +6,15 @@ using namespace std;
 
 bool has_collision(const unordered_map<char, int>& mapping, const vector<string>& words)
 {
-    unordered_map <string, vector<string> > encode_list;
+    // unordered_map <string, vector<string> > encode_list;
+    unordered_map <string, string > encode_list;
     for(const auto& word: words){
         string encode;
         for(char ch: word)
             encode += to_string(mapping.at(ch)); 
     
         if(encode_list.count(encode) > 0){
-            encode_list[encode].push_back(word);
+            // encode_list[encode].push_back(word);
             return true;
         }
         else
